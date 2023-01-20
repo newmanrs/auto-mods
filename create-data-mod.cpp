@@ -11,6 +11,7 @@
 #include "patches/no_wall.h"
 #include "patches/nomadking.h"
 #include "patches/pocket_horse.h"
+#include "patches/double_unit_costs.h"
 #include "patches/random_costs.h"
 #include "patches/teamwork.h"
 
@@ -27,6 +28,7 @@ const char *const MATRYOSHKA = "matryoshka";
 const char *const NO_WALL = "no-wall";
 const char *const NOMAD_KING = "nomad-king";
 const char *const POCKET_HORSE = "pocket-horse";
+const char *const DOUBLED_UNIT_COSTS = "doubled-unit-costs";
 const char *const RANDOM_COSTS = "random-costs";
 const char *const RANDOM_TECH_COSTS = "random-tech-costs";
 const char *const RANDOM_UNIT_COSTS = "random-unit-costs";
@@ -58,6 +60,7 @@ int main(int argc, char **argv) {
         cout << "    " << NO_WALL << endl;
         cout << "    " << NOMAD_KING << endl;
         cout << "    " << POCKET_HORSE << endl;
+        cout << "    " << DOUBLED_UNIT_COSTS;
         cout << "    " << RANDOM_COSTS << endl;
         cout << "    " << RANDOM_TECH_COSTS << endl;
         cout << "    " << RANDOM_UNIT_COSTS << endl;
@@ -114,6 +117,8 @@ void applyModifications(genie::DatFile *df, const string &modIdentifier) {
         configureNomadKing(df);
     } else if (POCKET_HORSE == modIdentifier) {
         setPocketHorseIds(df);
+    } else if (DOUBLED_UNIT_COSTS == modIdentifier){
+        doubleUnitCosts(df);
     } else if (RANDOM_COSTS == modIdentifier) {
         jumbleCosts(df);
         enableStablesForMesoCivs(df);

@@ -8,8 +8,9 @@
 #include "ids.h"
 
 
-typedef genie::ResourceUsage<int16_t, int16_t, int16_t> ResourceCost;
-typedef genie::ResourceUsage<int16_t, int16_t, uint8_t> ResearchResourceCost;
+// move ot header
+//typedef genie::ResourceUsage<int16_t, int16_t, int16_t> ResourceCost;
+//typedef genie::ResourceUsage<int16_t, int16_t, uint8_t> ResearchResourceCost;
 
 
 bool isNaturalResourceCost(const ResourceCost &cost) { return cost.Type != -1 && cost.Type < 4 && cost.Amount > 0 && cost.Flag == 1; }

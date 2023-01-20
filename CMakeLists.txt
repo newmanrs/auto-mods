@@ -24,6 +24,7 @@ add_executable(
     patches/kidnap.cpp
     patches/no_wall.cpp
     patches/nomadking.cpp
+    patches/double_unit_costs.cpp
     patches/random_costs.cpp
     patches/pocket_horse.cpp
     patches/teamwork.cpp
